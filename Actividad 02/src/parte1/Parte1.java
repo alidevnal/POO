@@ -143,7 +143,7 @@ public class Parte1 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese el valor de la compra: ");
         double valorCompra = scanner.nextDouble();
-        scanner.nextLine();  // Consumir el salto de línea
+        scanner.nextLine();
         System.out.print("Ingrese el color de la bolita: ");
         String colorBolita = scanner.nextLine().toUpperCase();
         int porcentajeDescuento;
@@ -236,6 +236,133 @@ public class Parte1 {
             } else {
                 System.out.println("Y ES DE MENOR PESO");
             }
+        }
+        scanner.close();
+    }
+
+    public static void ej22() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el nombre del empleado: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Ingrese el salario básico por hora: ");
+        double salarioPorHora = scanner.nextDouble();
+        System.out.print("Ingrese el número de horas trabajadas en el mes: ");
+        int horasTrabajadas = scanner.nextInt();
+        double salarioMensual = salarioPorHora * horasTrabajadas;
+        if (salarioMensual > 450000) {
+            System.out.println("Nombre: " + nombre);
+            System.out.println("Salario mensual: $" + salarioMensual);
+        } else {
+            System.out.println("Nombre: " + nombre);
+        }
+    }
+
+    public static void ej23() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el valor de A: ");
+        double a = scanner.nextDouble();
+        System.out.print("Ingrese el valor de B: ");
+        double b = scanner.nextDouble();
+        System.out.print("Ingrese el valor de C: ");
+        double c = scanner.nextDouble();
+        double discriminante = Math.pow(b, 2) - (4 * a * c);
+        if (discriminante > 0) {
+            double x1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+            double x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+            System.out.println("Las soluciones son: x1 = " + x1 + ", x2 = " + x2);
+        } else if (discriminante == 0) {
+            double x = -b / (2 * a);
+            System.out.println("La solución única es: x = " + x);
+        } else {
+            System.out.println("La ecuación no tiene soluciones reales.");
+        }
+    }
+
+    public static void ej24() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el peso de la esfera A: ");
+        double pesoA = scanner.nextDouble();
+        System.out.print("Ingrese el peso de la esfera B: ");
+        double pesoB = scanner.nextDouble();
+        System.out.print("Ingrese el peso de la esfera C: ");
+        double pesoC = scanner.nextDouble();
+        if (pesoA > pesoB && pesoA > pesoC) {
+            System.out.println("La esfera A es la de mayor peso.");
+        } else if (pesoB > pesoA && pesoB > pesoC) {
+            System.out.println("La esfera B es la de mayor peso.");
+        } else if (pesoC > pesoA && pesoC > pesoB) {
+            System.out.println("La esfera C es la de mayor peso.");
+        } else {
+            System.out.println("Hay esferas con pesos iguales.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        System.out.println("\n--- Menú de opciones ---");
+        System.out.println("1. Ejercicio 18");
+        System.out.println("2. Ejercicio 19");
+        System.out.println("3. Ejercicio 21");
+        System.out.println("4. Ejercicio Re7");
+        System.out.println("5. Ejercicio Re10");
+        System.out.println("6. Ejercicio Re11");
+        System.out.println("7. Ejercicio Re12");
+        System.out.println("8. Ejercicio Re13");
+        System.out.println("9. Ejercicio Re14");
+        System.out.println("10. Ejercicio Re15");
+        System.out.println("11. Ejercicio 22");
+        System.out.println("12. Ejercicio 23");
+        System.out.println("13. Ejercicio 24");
+        System.out.println("0. Salir");
+        System.out.print("Seleccione una opción: ");
+        opcion = scanner.nextInt();
+        scanner.nextLine();
+        switch (opcion) {
+            case 1:
+                ej18();
+                break;
+            case 2:
+                ej19();
+                break;
+            case 3:
+                ej21();
+                break;
+            case 4:
+                ejRe7();
+                break;
+            case 5:
+                ejRe10();
+                break;
+            case 6:
+                ejRe11();
+                break;
+            case 7:
+                ejRe12();
+                break;
+            case 8:
+                ejRe13();
+                break;
+            case 9:
+                ejRe14();
+                break;
+            case 10:
+                ejRe15();
+                break;
+            case 11:
+                ej22();
+                break;
+            case 12:
+                ej23();
+                break;
+            case 13:
+                ej24();
+                break;
+            case 0:
+                System.out.println("Saliendo...");
+                break;
+            default:
+                System.out.println("Opción inválida. Intente nuevamente.");
         }
         scanner.close();
     }
