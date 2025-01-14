@@ -1,15 +1,12 @@
 package parte1;
 
-public class Employee1 {
+public class EmployeeWithCodeAndTax extends Employee {
     private String code;
-    private String name;
-    private int hoursWorked;
     private double hourlyRate;
     private double taxRetention;
-    public Employee1(String code, String name, int hoursWorked, double hourlyRate, double taxRetention) {
+    public EmployeeWithCodeAndTax(String code, String name, int hoursWorked, double hourlyRate, double taxRetention) {
+        super(name, hoursWorked);
         this.code = code;
-        this.name = name;
-        this.hoursWorked = hoursWorked;
         this.hourlyRate = hourlyRate;
         this.taxRetention = taxRetention;
     }
@@ -19,6 +16,7 @@ public class Employee1 {
     public double calculateNetSalary() {
         return calculateGrossSalary() * (1 - taxRetention / 100);
     }
+    @Override
     public String displayInformation() {
         return "Código: " + code +
                 "\nNombres: " + name +

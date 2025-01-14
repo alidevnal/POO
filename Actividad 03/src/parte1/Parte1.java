@@ -1,6 +1,5 @@
 package parte1;
 import javax.swing.*;
-import java.util.Scanner;
 
 public class Parte1 {
     public static void ej18() {
@@ -9,7 +8,7 @@ public class Parte1 {
         int hoursWorked = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de horas trabajadas al mes:"));
         double hourlyRate = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor por hora trabajada:"));
         double taxRetention = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el porcentaje de retención en la fuente:"));
-        Employee1 employee = new Employee1(code, name, hoursWorked, hourlyRate, taxRetention);
+        EmployeeWithCodeAndTax employee = new EmployeeWithCodeAndTax(code, name, hoursWorked, hourlyRate, taxRetention);
         JOptionPane.showMessageDialog(null, employee.displayInformation());
     }
 
@@ -44,7 +43,7 @@ public class Parte1 {
         String name = JOptionPane.showInputDialog("Ingrese el nombre del empleado:");
         double hourlySalary = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el salario básico por hora:"));
         int hoursWorked = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de horas trabajadas en el mes:"));
-        Employee2 employee = new Employee2(name, hourlySalary, hoursWorked);
+        EmployeeWithSalary employee = new EmployeeWithSalary(name, hoursWorked, hourlySalary);
         JOptionPane.showMessageDialog(null, employee.displayInformation());
     }
 
