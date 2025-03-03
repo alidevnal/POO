@@ -209,8 +209,4 @@ public class ContactManagerGUI extends JFrame {
         nameField.setText("");
         numberField.setText("");
     }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new ContactManagerGUI().setVisible(true));
-    }
 }
